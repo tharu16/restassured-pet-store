@@ -9,5 +9,5 @@ RUN apt-get update && apt-get install -y \
 RUN mvn -version
 RUN git clone https://github.com/tharu16/restassured-pet-store.git
 WORKDIR restassured-pet-store
-CMD mvn test
+CMD mkdir test-output && mvn test
 #CMD ls && mvn test
