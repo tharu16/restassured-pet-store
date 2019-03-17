@@ -7,11 +7,7 @@ RUN apt-get update && apt-get install -y \
   maven
 
 RUN mvn -version
-#RUN git clone https://github.com/tharu16/restassured-pet-store.git
-RUN mkdir restassured-demo-tests
-COPY restassured-pet-store /restassured-demo-tests
-#COPY pom.xml /restassured-demo-tests
-WORKDIR restassured-demo-tests/
-CMD ls && mvn test
-#RUN cd restassured-pet-store && mkdir test-output
-#CMD mvn test
+RUN git clone https://github.com/tharu16/restassured-pet-store.git
+WORKDIR restassured-pet-store
+CMD mvn test
+#CMD ls && mvn test
